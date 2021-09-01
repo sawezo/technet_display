@@ -272,7 +272,7 @@ function update(initial=true){
 }
   
 function network(data_file, coords=true, label=true){
-    d3.csv("/data/"+data_file).then(function(lines){
+    d3.csv("data/"+data_file).then(function(lines){
         
         // Data Preparation ---------------------------------------------------------
         node_groups = Array.from(new Set(lines.map(d => d.source_group)))
