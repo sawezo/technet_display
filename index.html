@@ -1,0 +1,327 @@
+<html>
+    
+    <head>
+        <title>TechNet Display</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="TechNet Presentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="/style.css">
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"></script>
+        
+        
+        <!-- DEV -->
+        <script type="text/javascript">
+            function show_coords(event) {
+                var x=event.clientX;
+                var y=event.clientY;
+                console.log("X coords: " + x + ", Y coords: " + y);
+            }
+        </script>
+    </head>
+
+
+    <body onmousedown="show_coords(event)">
+
+        <main>
+            
+            <section class="introduction">
+                <h1>Leveraging Big Data Solutions to Model Procurement Landscapes</h1>
+                <h2>How our team can collect, process and model data to maximize insights.</h2>
+                <br>
+                <h3>Rotunda Solutions, August 2021</h3>
+                
+                <br>
+                <br>
+                <hr>
+                
+                
+                <br>
+                <h4><b>Scroll &darr; to see what we can do!</b></h4>
+
+
+            </section>
+
+
+            <section id="scrolly">
+                
+                <!-- the leftmost scrolly slide panes -->
+                <article>
+                    
+                    <!-- PART 1: PROJECT INTRODUCTION -->
+                    <div class="step" id="title_card_1"></div>
+                    
+                    <div class="step" id="1a">
+                        <h3>the problem</h3>
+                        
+                        <ul>
+
+                            <li>procurement data comes from all kinds of different sources, each with their own set of unique challenges</li>
+                                <ul>
+                                    <li>dated legacy systems vs. state of the art data management</li>
+                                    <li>cleanliness of manual entries</li>
+                                    <li>massive storage and memory demands</li>
+                                    <li>and much more...</li>
+                                </ul>
+
+                            <br>
+
+                            <li>furthermore, these sources are often highly connected</li>
+                                <ul>
+                                    <li>these connections are critical for comprehensive analysis, but are often missed due to the complexity</li>
+                                </ul>
+                            
+                            <br>
+                            <li><b>this is where Rotunda Solutions comes in!</b></li>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="1b">
+                        <h3>context: data collection</h3>
+                        
+                        <ul>
+
+                            <li>even given a relatively small scope, analysis is a <b>very</b> difficult task to do <b>correctly</b></li>
+                            <br>
+                            <li>some considerations include:</li>
+                                <ul>
+                                    <li>what data sources should one start with?</li>
+                                    <li>how can one access and store the data from each?</li>
+                                </ul>
+                            
+                            <br>
+                            
+                            <li>for example, one may miss fine details different (and often hard to access) sources bring:</li>
+                                <ul>
+                                    <li><b>FPDS-NG RSS feed</b>: contract data</li>
+                                    <li><b>SAM REST API</b>: vendor data</li>
+                                    <li><b>USA Spending API</b>: subawardee data to complement vendor data</li>
+                                </ul>
+
+                            
+                        </ul>
+                    </div>        
+
+                    <div class="step" id="1c">
+                        <h3>context: data modeling</h3>
+                        
+                        <ul>
+                            <li>even when using the correct sources and pulling the data, there are many tricks to maximize insights</li>
+
+                            <ul>
+                                <li>example: using knowledge graphs to highlight 'hidden' connections between disparate sources</li>
+                            </ul>
+                            
+                            <br>
+                            
+                            <li>consider the real-world mini-graph on the right, detailing relations between:</li>
+                            <ul>
+                                <li style="color:darkorange">vendors indexed by DUNS codes</li>
+                                <li style="color:blue">contracts the vendors were awarded with</li>
+                            </ul>
+
+                            <br>
+                            <li>this gives us some useful information, but how could we dig even deeper?</li>
+                            
+                            
+                        </ul>
+                    </div>
+
+                    <div class="step" id="1d">
+                        <h3>supercharged insights</h3>
+                        
+                        <ul>
+                            <li>many would stop here, but we can often mine more information by tracing 'deeper' connections in the graph</li>
+
+                            <ul>
+                                <li>here we have added company ownership links; note how many more vendors have been linked to these contracts!</li>
+                            </ul>
+                        
+                            <br>
+                            <li>we now have a more complete landscape, which could be critical in multiple analysis, including:</li>
+                            <ul>
+                                <li>analyzing competing vendors</li>
+                                <li>ensuring conglomerates do not box out small business from protected opportunities</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    
+
+                    <!-- PART 2: VISUALIZATION GALLERY -->
+                    <div class="step" id="title_card_2"></div>
+
+                    <div class="step" id="2a">
+                        <h3>Vendor Performance Location Map</h3>
+                        
+                        <ul>
+                            <li><b>motivation</b>: where are vendors in this scope working?</li>
+                            <ul>
+                                <li>how much is each vendor making relative to the others?</li>
+                                <li>do any locations seem to be general hotspots for high award totals?</li>
+                            </ul>
+
+                            <br>
+                            <li><b>visualization guide</b>:</li>
+                            <ul>
+                                <li>points represent vendors in this scope</li>
+                                <li>vendors are colored by (scaled) total earnings</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="2b">
+                        <h3>NAICS Breakdown</h3>
+                        
+                        <ul>
+                            <li><b>motivation</b>: what contracts/vendors/locations are associated with NAICS code 'X'?</li>
+                            <ul>
+                                <li>are any locations linked to all NAICS codes?</li>
+                                <li>are any NAICS codes very specific to a single vendor/location?</li>
+                            </ul>
+
+                            <br>
+                            <li><b>visualization guide</b>:</li>
+                            <ul>
+                                <li>node types are represented by columns</li>
+                                <li>links between nodes reflect per real-world connections</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="2c">
+                        <h3>Vendor Specialty Drilldown</h3>
+                        
+                        <ul>
+                            <li><b>motivation</b>: within a defined scope of contracts, what do vendors specialize in?</li>
+                            <ul>
+                                <li>do any vendors have a monopoly over a specific kind of award?</li>
+                                <li>do any NAICS codes disprorortionately account for total obligation costs?</li>
+                            </ul>
+
+                            <br>
+                            <li><b>visualization guide</b>:</li>
+                            <ul>
+                                <li>contracts in the scope are grouped by NAICS codes and prime vendor DUNS</li>
+                                <li>cells are sized by contract award amount</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+
+                    <!-- PART 3: USE CASE (COI) -->
+                    <div class="step" id="title_card_3"></div>
+
+                    <div class="step" id="3a">
+                        <h3>conflict of interest detection</h3>
+                        <ul>
+                            <li>given a company (e.g. "Rotunda Solutions"), how can we identify as many currently active and connected programs that the company was a prime and/or subcontractor on?</li>
+                            
+                            <br>
+                            <li>example: Sam was promoted to Defense Secretary. How can he get ahead of any <i>potential</i> accusations of conflicts of interest with Rotunda?</li>
+                            <ul>
+                                <li>imagine if the 'QWERTY' weapons program awarded tons of work to Rotunda...</li>
+                                <li>what if a subsidary 'Adnutor Solutions' was associated with the program; how could an NLP solution catch this?</li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="3b">
+                        <h3>a creative solution</h3>
+                        <ul>
+                            <li>let's break this project down into three main pieces:</li>
+                            <ol>
+                                <li>data merging</li>
+                                <li>data modeling</li>
+                                <li>querying for results</li>
+                            </ol>
+
+                            
+                            <br>
+                            <li>now that we have the overall project context down, we can go over some more fine details</li>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="3c">
+                        <h3>leveraging connections</h3>
+                        <ul>
+                            <li>now let's focus on the data modeling part</li>
+                            <br>
+
+                            <li>this is actually much simpler than it may sound at first:</li>
+                            <ol style="padding-top:1%;">
+                                <br>
+                                <li>build up structures that record all attributes associated with each node</li>
+                                <br>
+                                <li>link the nodes together (using NetworkX, Neo4j or some other technology)</li>
+                                <br>
+                                <li>chain data attributes to answer meanginful analysis questions</li>
+                            </ol>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="3d">
+                        <h3>example graph</h3>
+                        <ul style="font-size: 18;">
+                            <li>we now have more power to connect nodes of information</li>
+                            <ul>
+                                <li>in the COI application, this means we can link multiple different names to a single company</li>
+                            </ul>
+                    
+                            <li style="padding-top: 5%;">this has resulted in the identification of many more potential COIs</li>
+                            <ul>
+                                <li>many will be false positives, but that's ok for this use case</li>
+                            </ul>
+                    
+                            <br>
+                            <li style="padding-top: 5%;">we also now have more ability in describing <i>how</i> data is connected</li>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="3e">
+                        <h3>our impact</h3>
+                        
+                        <ul>
+                            <li>graph modeling helped us squeeze many more potential COIs</li>
+                            <ul>
+                                <li>Rotunda's expertise in this space drives our innovative analysis in a myriad of ways; not just COI monitoring</li>
+                            </ul>
+                            
+                            <br>
+                            <li>contact our team!</li>
+                            <ul>
+                                <li>email our lab: <a href="mailto:research@rotundasolutions.com">Rotunda Research and Innovation Lab</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    
+
+                </article>
+
+
+                <!-- the sticky scrollytelling canvas -->
+                <figure id="scrolly_canvas">
+                    <progress id="progress_bar" value="0" max="100"></progress>
+                    <div id="instructions"></div>
+                </figure>
+
+            </section>
+        
+        </main>
+
+
+        <!-- scripts -->
+        <script src="https://unpkg.com/intersection-observer"></script>
+        <script src="https://unpkg.com/scrollama"></script>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="/script.js"></script>
+
+    </body>
+</html

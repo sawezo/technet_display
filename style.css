@@ -1,0 +1,304 @@
+/* TEXT  */
+h1{
+  color: rgb(18, 36, 195);
+  text-transform: uppercase;
+  font-size: 41px;
+  margin: 0;
+  line-height: 68px;
+  letter-spacing: 1.8px;
+  position: relative;
+  top: 1%;
+}
+
+h2{
+  top: 10px;
+  font-size: 25px;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+}
+
+h3{
+  top: 20px;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+h4{
+  margin: 0;
+  position: absolute;
+  font-weight: normal;
+  bottom: 16%;
+}
+
+h5{
+  font-style: italic;
+  font-weight: normal;
+  /* text-indent: 4em; */
+  position: absolute;
+  bottom: 2%;
+}
+
+.instruction_text::before {
+  content: "\1F5B1  ";
+}
+
+
+.instruction_text {
+  font-weight: bold;
+  font-size: 18pt;
+  padding-left:25;
+  position: relative;
+}
+
+.step h3 {
+  text-align: left;
+  padding-left: .7rem;
+  padding-right: 1rem;
+  padding-top: .7rem;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: bold;
+  }
+
+.step p {
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  padding-top: .8rem;
+  margin-bottom: .1rem;
+  position: relative;
+
+  color: black;
+}
+
+.step ul {
+  position: relative;
+  text-align: left;
+  padding-top: 5%;
+  padding-left: 15%;
+  margin-right: 15%;
+
+  color: black;
+}
+
+.step ol {
+  position: relative;
+  text-align: left;
+  padding-top: 5%;
+  padding-left: 15%;
+  margin-right: 15%;
+
+  color: black;
+}
+
+.hover_label_text_container {
+  position: absolute;
+  left: var(--x_coordinate);
+  top: var(--y_coordinate);
+  width:115px;
+  
+  background-color: rgb(164, 215, 245); 
+  padding: 5px;
+  text-align: left;
+}  
+
+.hover_label_text {
+  font-family: 'Lucida Bright';
+  font-weight: bold;
+  font-size: 12;
+}
+
+text {
+  fill: #000;
+  font: 'Lucida Bright';
+  padding-left: 0;
+}
+
+.operation {
+  fill: #000;
+  font: 'Courier';
+  padding-left: 0;
+  padding-top: 0;
+  font-style: italic;
+}
+
+
+/* SECTIONS */
+.introduction {
+    background-color: #82d1ff;
+    padding: 3rem;
+    height: 80%;
+}
+
+#scrolly {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #7cc2e2;
+    opacity: 81;
+    padding: 3rem;
+}
+
+#scrolly > * {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+article {
+  position: relative;
+  padding: 0 1rem;
+  max-width: 18rem;
+}
+
+body{
+  font-family: 'Lucida Bright';
+}
+
+
+/* STEP PANES */
+.step {
+  margin: 0 auto 2rem auto;
+  background-color: #3b3b3b;
+  color: #fff;
+  opacity: 0.23;
+  height: 40%;
+}
+
+.step.is-active {
+  background-color: rgb(215, 244, 255);
+  opacity: 1;
+}
+
+
+/* FIGURE PANE */
+figure {
+  position: -webkit-sticky;
+  position: sticky;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background-color: #e6e1e1;
+  margin: 0;
+  
+  z-index: 0;
+  width: 98%;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+}
+
+figure svg {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: inline-block;
+}
+
+progress {
+  position: absolute;
+  bottom: 0;
+  right: 10;
+  height: 20px !important;
+}
+
+#instructions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+/* TITLE CARDS */
+.title-container {
+  padding-top: 30%;
+}
+
+.title {
+  transform: translateX(-50%) rotate(-10deg);
+  display: block;
+  float: left;
+
+  left: 50%;
+  position: relative;
+}
+  
+.title span {
+  position: relative;
+  transform: skew(-10deg);
+  display: block;
+  float: left;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+
+/* IMAGES */
+.basic_img_container > {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.basic_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fade_in_img_container {
+  position: relative;
+  text-align: center;
+}
+
+.fade_replaced_img {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.img_to_fade_in {
+  opacity: 0;
+  height: 100%;
+  display:inline-block;
+}
+
+.html_graph_upload {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.column {
+  float: left;
+  padding: 0px;
+  white-space: nowrap;
+}
+
+
+/* NETWORK */
+svg #network{
+  padding: 5%;  
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+  
+.nodes circle {
+  stroke: rgb(26, 23, 23);
+  stroke-width: 1.5px;
+}
+  
+.node_label {
+  fill: #000;
+  font: 'Lucida Bright';
+  padding-left: 0;
+}
