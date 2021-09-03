@@ -499,22 +499,49 @@ function handleStepEnter(response){
   const stepId = response["element"]["id"]
   
   
-  // PART 1
-  if (stepId==="title_card_1"){ 
-    // from previous
+  // preview 
+  if (stepId==="0"){ 
+    // after
     d3.selectAll(".title_card_image").remove();
+
+    addInstruction("drag")
+
+    width = 100;
+    height = 100;
+    lineAdditionIdx = 0
+    repulsion = 29;
+    radius = 10;
+    image = false;
+    
+    label = false;
+    label_min_size = 15;
+    label_max_size = 30;
+  
+    mouse_tools = true;
+    weights = false;
+    
+    setupNetworkGraph()
+    simulation = network("hook_network.csv", coords=true);
+  }
+
+
+  // PART 1
+  else if (stepId==="title_card_1"){ 
+    // from previous
+    $(".instruction_text").remove();
+    d3.selectAll("#network").remove();
     
     // from next (if scrolling up)
     $(".instruction_text").remove();
     d3.selectAll(".fade_in_img_container").remove();
 
     addTitleCard("./imgs/title1.png", "#"+stepId,
-      "<div class='title-container'><h1><span class='title'>- Part I -</span><span class='title'>the Problem</span><span class='title'>& Context</span></h1></div>")
+      "<div class='title-container'><h1><span class='title'>- Part I -</span><span class='title'>Problem</span><span class='title'>& Context</span></h1></div>")
   }
-
+  
   else if (stepId==="1a"){ 
     d3.selectAll(".title_card_image").remove();
-    
+
     $(".instruction_text").remove();
     d3.selectAll(".fade_in_img_container").remove();
     d3.selectAll(".fade_replaced_img").remove(); 
@@ -653,7 +680,7 @@ function handleStepEnter(response){
     d3.select(".basic_img_container").remove();
 
     addTitleCard("./imgs/title3.png", "#"+stepId,
-      "<div class='title-container'><h1><span class='title'>- Part III -</span><span class='title'>Real-World</span><span class='title'>Use Case</span></h1></div>")
+    "<div class='title-container'><h1><span class='title'>- Part III -</span><span class='title'>Use Case</span></h1></div>")
   }
 
   else if (stepId==="3a"){
