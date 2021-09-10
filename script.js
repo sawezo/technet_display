@@ -501,10 +501,13 @@ function handleStepEnter(response){
   
   // preview 
   if (stepId==="0"){ 
+    // self (refresh)
+    d3.selectAll("#network").remove();
+
     // nothing before 
     // after
     d3.selectAll(".title_card_image").remove();
-    
+
     addInstruction("drag")
 
     repulsion = 20;
@@ -654,23 +657,26 @@ function handleStepEnter(response){
 
   else if (stepId==="2a"){ 
     d3.selectAll(".title_card_image").remove();
-
+  
     $(".instruction_text").remove();
     scrolly_canvas.select(".html_graph").remove();
-
-    addInstruction("click, drag, zoom and hover")
-
-    const graphPath = "interactive_diagrams/vendor_map.html"
+  
+    addInstruction("hover")
+  
+    const graphPath = "interactive_diagrams/sankey.html"
     uploadHtmlGraph(graphPath);
   }
-
+  
   else if (stepId==="2b"){ 
     $(".instruction_text").remove();
+    scrolly_canvas.select(".html_graph").remove();  
+  
+    $(".instruction_text").remove();
     scrolly_canvas.select(".html_graph").remove();
-
-    addInstruction("hover")
-
-    const graphPath = "interactive_diagrams/sankey.html"
+  
+    addInstruction("click, drag, zoom and hover")
+  
+    const graphPath = "interactive_diagrams/vendor_map.html"
     uploadHtmlGraph(graphPath);
   }
 

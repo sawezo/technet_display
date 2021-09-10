@@ -72,12 +72,11 @@
                         
                         <ul>
 
-                            <li>procurement data comes from all kinds of different sources, each with their own set of unique challenges</li>
+                            <li>procurement data comes from all kinds of different sources, each with their own set of unique challenge:s</li>
                                 <ul>
                                     <li>dated legacy systems vs. state of the art data management</li>
                                     <li>cleanliness of manual entries</li>
                                     <li>massive storage and memory demands</li>
-                                    <li>and much more...</li>
                                 </ul>
 
                             <br>
@@ -108,6 +107,9 @@
                             <br>
                             
                             <li>knowing what novel information each source gives is critical</li>
+                            
+                            <br>
+                            <li>for example:</li>
                                 <ul>
                                     <li><b>FPDS-NG RSS feed</b>: gives contract details</li>
                                     <li><b>SAM REST API</b>: gives vendor details</li>
@@ -122,7 +124,7 @@
                         <h3>data modeling</h3>
                         
                         <ul>
-                            <li>even when using the correct sources and pulling the data, there are many tricks to maximize insights</li>
+                            <li>even when using the correct sources, there are many tricks to maximize insights</li>
 
                             <ul>
                                 <li>example: using knowledge graphs to highlight 'hidden' connections between disparate sources</li>
@@ -153,7 +155,7 @@
                             </ul>
                         
                             <br>
-                            <li>we now have a more complete landscape, which could be critical in multiple analyses:</li>
+                            <li>we now have a more complete landscape, which could be critical in analyses such as:</li>
                             <ul>
                                 <li>analyzing competing vendors</li>
                                 <li>ensuring conglomerates do not box out small business from protected opportunities</li>
@@ -164,8 +166,25 @@
 
                     <!-- PART 2: VISUALIZATION GALLERY -->
                     <div class="step" id="title_card_2"></div>
-
                     <div class="step" id="2a">
+                        <h3>naics breakdown</h3>
+                        
+                        <ul>
+                            <li>what contracts, vendors and locations are associated with NAICS code 'X'?</li>
+                            <ul>
+                                <li>are any locations linked to all NAICS codes?</li>
+                                <li>are any NAICS codes very specific to a single vendor/location?</li>
+                            </ul>
+
+                            <br>
+                            <li>a NAICS (North American Industry Classification System) Code is a classification used to track statistical information about the economy.</li>
+
+                            <br>
+                            <li>multiple commerical wholesalers in this scope are based out of California</li>
+                        </ul>
+                    </div>
+
+                    <div class="step" id="2b">
                         <h3>vendor performance location map</h3>
                         
                         <ul>
@@ -175,35 +194,16 @@
                                 <li>do any locations seem to be general hotspots for high award totals?</li>
                             </ul>
 
-                            <!-- <br>
-                            <li><b>visualization guide</b>:</li>
-                            <ul>
-                                <li>points represent vendors in this scope</li>
-                                <li>vendors are colored by (scaled) total earnings</li>
-                            </ul> -->
-                        </ul>
-                    </div>
-
-                    <div class="step" id="2b">
-                        <h3>naics breakdown</h3>
-                        
-                        <ul>
-                            <li>what contracts/vendors/locations are associated with NAICS code 'X'?</li>
-                            <ul>
-                                <li>are any locations linked to all NAICS codes?</li>
-                                <li>are any NAICS codes very specific to a single vendor/location?</li>
-                            </ul>
-
                             <br>
-                            <li>A NAICS (North American Industry Classification System) Code is a classification used to track statistical information about the economy.</li>
-                            <!-- <br>
-                            <li><b>visualization guide</b>:</li>
+                            <li>in this scope, we discover:</li>
                             <ul>
-                                <li>node types are represented by columns</li>
-                                <li>links between nodes reflect per real-world connections</li>
-                            </ul> -->
+                                <li>is represented by three main vendors</li>
+                                <li>NAICS 238220 ("Sign Manufacturing") is a relatively lucrative opportunity</li>
+                                <li>2/4 of the associated vendors are in Florida</li>
+                            </ul>
                         </ul>
                     </div>
+
 
                     <div class="step" id="2c">
                         <h3>vendor specialty drilldown</h3>
@@ -215,12 +215,11 @@
                                 <li>do any NAICS codes disprorortionately account for total obligation costs?</li>
                             </ul>
 
-                            <!-- <br>
-                            <li><b>visualization guide</b>:</li>
+                            <br>
+                            <li>in this scope, we find:</li>
                             <ul>
-                                <li>contracts in the scope are grouped by NAICS codes and prime vendor DUNS</li>
-                                <li>cells are sized by contract award amount</li>
-                            </ul> -->
+                                <li>Spire Global Inc. (DUNS #078760689) represents 25% of all obligated funds in this scope</li>
+                            </ul>
                         </ul>
                     </div>
 
