@@ -31,33 +31,6 @@
     <body onmousedown="show_coords(event)">
 
         <main>
-            
-            <section class="introduction">
-                <img src="imgs/rotunda.png">
-                <br>
-                <br>
-                <br>
-                <br>
-
-                <hr>
-
-                <h1>Leveraging Big Data Solutions to Model Procurement Landscapes</h1>
-                <h2>How our team can collect, process and model data to maximize insights.</h2>
-
-                <br>
-                <br>
-
-                <hr>
-                
-                <br>
-                <br>
-
-                <h4><b>Scroll &darr; to see what we can do!</b></h4>
-
-
-            </section>
-
-
             <section id="scrolly">
                 
                 <!-- the leftmost scrolly slide panes -->
@@ -70,12 +43,20 @@
 
                             <li>what on earth is this thing on the right?</li>
                                 <ul>
-                                    <li>how can it help us supercharge your data analysis?</li>
-                                    <li>what are some of the real-world use cases we have had success with?</li>
+                                    <li>how can it help us at Rotunda Solutions supercharge your data analysis?</li>
+                                    <li>what are some real-world use cases we have had success with?</li>
                                 </ul>
 
                             <br>
+                            <li>on the right we can see connections between:</li>
+                            <ul>
+                                <li style="color:red">corporations</li>
+                                <li style="color:blue">contracts</li>
+                                <li style="color:darkorange">vendors</li>
+                                <li style="color:green">parent/subsidary vendors</li>
+                            </ul>
 
+                            <br>
                             <li><b>keep scrolling down to learn more!</b></li>
                                 
                         </ul>
@@ -101,18 +82,18 @@
 
                             <br>
 
-                            <li>furthermore, these sources are often highly connected</li>
+                            <li>sources are often highly connected</li>
                                 <ul>
-                                    <li>these connections are critical for comprehensive analysis, but are often missed due to the complexity</li>
+                                    <li>critical for comprehensive analysis, but complex</li>
                                 </ul>
                             
                             <br>
-                            <li><b>this is where Rotunda Solutions comes in!</b></li>
+                            <li><b>this is where our work at Rotunda Solutions comes in!</b></li>
                         </ul>
                     </div>
 
                     <div class="step" id="1b">
-                        <h3>context: data collection</h3>
+                        <h3>data collection</h3>
                         
                         <ul>
 
@@ -120,17 +101,17 @@
                             <br>
                             <li>some considerations include:</li>
                                 <ul>
-                                    <li>what data sources should one start with?</li>
-                                    <li>how can one access and store the data from each?</li>
+                                    <li>which data sources to use?</li>
+                                    <li>how to store and access data?</li>
                                 </ul>
                             
                             <br>
                             
-                            <li>for example, one may miss fine details different (and often hard to access) sources bring:</li>
+                            <li>knowing what novel information each source gives is critical</li>
                                 <ul>
-                                    <li><b>FPDS-NG RSS feed</b>: contract data</li>
-                                    <li><b>SAM REST API</b>: vendor data</li>
-                                    <li><b>USA Spending API</b>: subawardee data to complement vendor data</li>
+                                    <li><b>FPDS-NG RSS feed</b>: gives contract details</li>
+                                    <li><b>SAM REST API</b>: gives vendor details</li>
+                                    <li><b>USA Spending API</b>: gives subaward details</li>
                                 </ul>
 
                             
@@ -138,7 +119,7 @@
                     </div>        
 
                     <div class="step" id="1c">
-                        <h3>context: data modeling</h3>
+                        <h3>data modeling</h3>
                         
                         <ul>
                             <li>even when using the correct sources and pulling the data, there are many tricks to maximize insights</li>
@@ -148,11 +129,10 @@
                             </ul>
                             
                             <br>
-                            
                             <li>consider the real-world mini-graph on the right, detailing relations between:</li>
                             <ul>
                                 <li style="color:darkorange">vendors indexed by DUNS codes</li>
-                                <li style="color:blue">contracts the vendors were awarded with</li>
+                                <li style="color:blue">contracts the vendors were awarded</li>
                             </ul>
 
                             <br>
@@ -166,14 +146,14 @@
                         <h3>supercharged insights</h3>
                         
                         <ul>
-                            <li>many would stop here, but we can often mine more information by tracing 'deeper' connections in the graph</li>
+                            <li>we can often mine more information by tracing 'deeper' connections in the graph</li>
 
                             <ul>
                                 <li>here we have added company ownership links; note how many more vendors have been linked to these contracts!</li>
                             </ul>
                         
                             <br>
-                            <li>we now have a more complete landscape, which could be critical in multiple analysis, including:</li>
+                            <li>we now have a more complete landscape, which could be critical in multiple analyses:</li>
                             <ul>
                                 <li>analyzing competing vendors</li>
                                 <li>ensuring conglomerates do not box out small business from protected opportunities</li>
@@ -186,59 +166,61 @@
                     <div class="step" id="title_card_2"></div>
 
                     <div class="step" id="2a">
-                        <h3>Vendor Performance Location Map</h3>
+                        <h3>vendor performance location map</h3>
                         
                         <ul>
-                            <li><b>motivation</b>: where are vendors in this scope working?</li>
+                            <li>where are vendors in this scope working?</li>
                             <ul>
                                 <li>how much is each vendor making relative to the others?</li>
                                 <li>do any locations seem to be general hotspots for high award totals?</li>
                             </ul>
 
-                            <br>
+                            <!-- <br>
                             <li><b>visualization guide</b>:</li>
                             <ul>
                                 <li>points represent vendors in this scope</li>
                                 <li>vendors are colored by (scaled) total earnings</li>
-                            </ul>
+                            </ul> -->
                         </ul>
                     </div>
 
                     <div class="step" id="2b">
-                        <h3>NAICS Breakdown</h3>
+                        <h3>naics breakdown</h3>
                         
                         <ul>
-                            <li><b>motivation</b>: what contracts/vendors/locations are associated with NAICS code 'X'?</li>
+                            <li>what contracts/vendors/locations are associated with NAICS code 'X'?</li>
                             <ul>
                                 <li>are any locations linked to all NAICS codes?</li>
                                 <li>are any NAICS codes very specific to a single vendor/location?</li>
                             </ul>
 
                             <br>
+                            <li>A NAICS (North American Industry Classification System) Code is a classification used to track statistical information about the economy.</li>
+                            <!-- <br>
                             <li><b>visualization guide</b>:</li>
                             <ul>
                                 <li>node types are represented by columns</li>
                                 <li>links between nodes reflect per real-world connections</li>
-                            </ul>
+                            </ul> -->
                         </ul>
                     </div>
 
                     <div class="step" id="2c">
-                        <h3>Vendor Specialty Drilldown</h3>
+                        <h3>vendor specialty drilldown</h3>
                         
                         <ul>
-                            <li><b>motivation</b>: within a defined scope of contracts, what do vendors specialize in?</li>
+                            <li>within a defined scope of contracts, what do vendors specialize in?</li>
                             <ul>
                                 <li>do any vendors have a monopoly over a specific kind of award?</li>
                                 <li>do any NAICS codes disprorortionately account for total obligation costs?</li>
                             </ul>
 
-                            <br>
+                            <!-- <br>
                             <li><b>visualization guide</b>:</li>
                             <ul>
                                 <li>contracts in the scope are grouped by NAICS codes and prime vendor DUNS</li>
                                 <li>cells are sized by contract award amount</li>
-                            </ul>
+                            </ul> -->
                         </ul>
                     </div>
 
@@ -249,7 +231,7 @@
                     <div class="step" id="3a">
                         <h3>conflict of interest detection</h3>
                         <ul>
-                            <li>given a company (e.g. "Rotunda Solutions"), how can we identify as many currently active and connected programs that the company was a prime and/or subcontractor on?</li>
+                            <li>given a company (e.g. "Rotunda Solutions"), how can we identify as many currently active and connected programs that the company was a prime/subcontractor on?</li>
                             
                             <br>
                             <li>example: Sam was promoted to Defense Secretary. How can he get ahead of any <i>potential</i> accusations of conflicts of interest with Rotunda?</li>
@@ -282,14 +264,14 @@
                             <li>now let's focus on the data modeling part</li>
                             <br>
 
-                            <li>this is actually much simpler than it may sound at first:</li>
+                            <li>our team has the power to:</li>
                             <ol style="padding-top:1%;">
                                 <br>
                                 <li>build up structures that record all attributes associated with each node</li>
                                 <br>
                                 <li>link the nodes together (using NetworkX, Neo4j or some other technology)</li>
                                 <br>
-                                <li>chain data attributes to answer meanginful analysis questions</li>
+                                <li>chain data attributes to answer meaningful analysis questions</li>
                             </ol>
                         </ul>
                     </div>
@@ -309,6 +291,12 @@
                     
                             <br>
                             <li style="padding-top: 5%;">we also now have more ability in describing <i>how</i> data is connected</li>
+                            <ul>
+                                <li style="color:red">corporations</li>
+                                <li style="color:blue">contracts</li>
+                                <li style="color:darkorange">vendors</li>
+                                <li style="color:green">parent/subsidary vendors</li>
+                            </ul>
                         </ul>
                     </div>
 
@@ -324,7 +312,7 @@
                             <br>
                             <li>contact our team!</li>
                             <ul>
-                                <li>email our lab: <a href="mailto:research@rotundasolutions.com">Rotunda Research and Innovation Lab</a></li>
+                                <li>email the Rotunda Research and Innovation Lab at: <a href="mailto:research@rotundasolutions.com">research@rotundasolutions.com</a></li>
                             </ul>
                         </ul>
                     </div>

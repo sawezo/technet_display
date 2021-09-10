@@ -1,5 +1,6 @@
 // VARIABLES ------------------------------------------------------------
 var dev = false; // dev printouts to console
+var fade_time = 700;
 
 // elements
 var figure = d3.select("#scrolly figure"); // the graph region
@@ -238,13 +239,12 @@ function update(initial=true){
 
     node.append("circle")
         .attr("class", "node")
-        .attr("stroke", "white")
         .attr("stroke-width", 3)
         .attr("r", radius)
         .attr("fill", d => "url(#"+d.image+")");
   }
 
-  else{
+  else {
     node.append("circle")
                 .attr("class", "node")
                 .attr("stroke", "white")
@@ -351,9 +351,9 @@ function addTitleCard(imagePATH, titleID, titleHTML){
       .attr('height', '100%')
       .attr('class', 'title_card_image');
 
-  $('.title_card_image').fadeOut(2000, function() {
+  $('.title_card_image').fadeOut(fade_time, function() {
     $('.title_card_image').attr("src", imagePATH);
-    $('.title_card_image').fadeIn(2000);
+    $('.title_card_image').fadeIn(fade_time);
   });
 }
 
@@ -434,10 +434,10 @@ function addImageToFadeSwap(el_id, startPath, replacementPath){
 }
 
 function fadeSwapImage(el_id, replacementPath){
-  $("#"+el_id).fadeOut(2000, function() {
+  $("#"+el_id).fadeOut(fade_time, function() {
       $("#"+el_id).attr("src", replacementPath);
       $("#"+el_id).attr("class", "fade_replaced_img");
-      $("#"+el_id).fadeIn(2000);
+      $("#"+el_id).fadeIn(fade_time);
   });
 }
 
@@ -501,27 +501,32 @@ function handleStepEnter(response){
   
   // preview 
   if (stepId==="0"){ 
+    // nothing before 
     // after
     d3.selectAll(".title_card_image").remove();
-
+    
     addInstruction("drag")
 
-    width = 100;
-    height = 100;
-    lineAdditionIdx = 0
-    repulsion = 29;
-    radius = 10;
+    repulsion = 20;
+    radius = 15;
+
+    linesToAdd = [];
+	  
     image = false;
     
     label = false;
-    label_min_size = 15;
-    label_max_size = 30;
-  
-    mouse_tools = true;
-    weights = false;
+    weights = true;
+    mouse_tools = false;
     
     setupNetworkGraph()
-    simulation = network("hook_network.csv", coords=true);
+    simulation = network("coi_network.csv", coords=true);
+    
+
+    addBasicImage("./imgs/rotunda.png")
+    d3.select(".basic_img_container")
+      .style('opacity', '.2')
+      .style("z-index", "-1")
+      .style("position", "relative")
   }
 
 
@@ -529,11 +534,14 @@ function handleStepEnter(response){
   else if (stepId==="title_card_1"){ 
     // from previous
     $(".instruction_text").remove();
+    d3.select(".basic_img_container").remove();
     d3.selectAll("#network").remove();
     
     // from next (if scrolling up)
-    $(".instruction_text").remove();
-    d3.selectAll(".fade_in_img_container").remove();
+    // $(".instruction_text").remove();
+    // d3.selectAll(".fade_in_img_container").remove();
+    d3.select(".basic_img_container").remove();
+
 
     addTitleCard("./imgs/title1.png", "#"+stepId,
       "<div class='title-container'><h1><span class='title'>- Part I -</span><span class='title'>Problem</span><span class='title'>& Context</span></h1></div>")
@@ -546,29 +554,37 @@ function handleStepEnter(response){
     d3.selectAll(".fade_in_img_container").remove();
     d3.selectAll(".fade_replaced_img").remove(); 
     
-    addInstruction("click this square")
+    d3.selectAll("#scrolly_canvas").style("background-color", "#e6e1e1")
+    
+    // addInstruction("click this square")
 
-    const img2id = {"./imgs/coi_net.png":"coi_net"}
-    const img2width = {"./imgs/coi_net.png": 100}
-    setupImagesToFadeIn(img2id, img2width) 
+    // const img2id = {"./imgs/coi_net.png":"coi_net"}
+    // const img2width = {"./imgs/coi_net.png": 100}
+    // setupImagesToFadeIn(img2id, img2width) 
+    addBasicImage("./imgs/coi_net.png")
   }
   
   else if (stepId==="1b"){ 
-    $(".instruction_text").remove();
-    d3.selectAll(".fade_in_img_container").remove();
+    d3.select(".basic_img_container").remove();
+    // $(".instruction_text").remove();
+    // d3.selectAll(".fade_in_img_container").remove();
 
     d3.selectAll("#network").remove();
     
+    d3.selectAll("#scrolly_canvas").style("background-color", "white")
     addInstruction("click each box to reveal a critical data source")
     
     addImageToFadeSwap("graph_swap_img_tm", "./imgs/question_box.png", "./imgs/fpds.png")
     addImageToFadeSwap("graph_swap_img_bl", "./imgs/question_box.png", "./imgs/sam.png")
     addImageToFadeSwap("graph_swap_img_br", "./imgs/question_box.png", "./imgs/usas.png")
+
+    addImageToFadeSwap
+
     
     // make images fit the window
-    scrolly_canvas.select("#graph_swap_img_tm").attr("style", "padding-left:7%; float:left; padding-top: 16%; height:35%; width:21%;");
-    scrolly_canvas.select("#graph_swap_img_bl").attr("style", "padding-left:7%; float:left; padding-top: 16%; height:35%; width:21%;");
-    scrolly_canvas.select("#graph_swap_img_br").attr("style", "padding-left:7%; float:left; padding-top: 16%; height:35%; width:21%;");
+    scrolly_canvas.select("#graph_swap_img_tm").attr("style", "padding-left:3%; float:left; padding-top: 16%; height:42%; width:30%;");
+    scrolly_canvas.select("#graph_swap_img_bl").attr("style", "padding-left:3%; float:left; padding-top: 16%; height:42%; width:30%;");
+    scrolly_canvas.select("#graph_swap_img_br").attr("style", "padding-left:3%; float:left; padding-top: 16%; height:42%; width:30%;");
   }
 
   else if (stepId==="1c"){ 
@@ -577,6 +593,8 @@ function handleStepEnter(response){
     d3.selectAll(".fade_replaced_img").remove(); 
 
     d3.selectAll("#network").remove();
+
+    d3.selectAll("#scrolly_canvas").style("background-color", "#e6e1e1")
 
     addInstruction("hover/drag nodes to move")
 
@@ -601,7 +619,7 @@ function handleStepEnter(response){
   else if (stepId==="1d"){ 
     d3.selectAll("#network").remove();
 
-
+    d3.selectAll(".title_card_image").remove();
 
     width = 100;
     height = 100;
@@ -698,6 +716,7 @@ function handleStepEnter(response){
     d3.select(".fade_in_img_container").remove();
     d3.select(".fade_replaced_img").remove();
     d3.select(".basic_img_container").remove();
+    d3.selectAll("#scrolly_canvas").style("background-color", "#e6e1e1")
 
     addInstruction("click empty space to reveal each piece of plan")
 
@@ -720,6 +739,9 @@ function handleStepEnter(response){
     d3.selectAll("#network").remove();
     $(".instruction_text").remove();
 
+
+    d3.selectAll("#scrolly_canvas").style("background-color", "#f8f4f4")
+
     addInstruction("double-click to clarify the blueprint")
 
     addImageToFadeSwap("img_swap", "./imgs/KnowledgeGraph2.png", "./imgs/KnowledgeGraph.png")
@@ -731,19 +753,19 @@ function handleStepEnter(response){
     d3.select(".fade_in_img_container").remove();
     d3.select(".fade_replaced_img").remove();
     d3.select(".basic_img_container").remove();
-    
+    d3.selectAll("#scrolly_canvas").style("background-color", "#e6e1e1")
+
     d3.selectAll(".html_graph").remove();
 
     addInstruction("drag")
 
     repulsion = 20;
-    radius = 15;
 
     linesToAdd = [];
 	  
     image = true;
-    image_h = 25;
-    image_w = 30;
+    image_h = 40;
+    image_w = 40;
     
     label = false;
     weights = true;

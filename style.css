@@ -1,4 +1,8 @@
 /* TEXT  */
+* {
+  font-family: "Merriweather";
+}
+
 h1{
   color: rgb(18, 36, 195);
   text-transform: uppercase;
@@ -38,6 +42,10 @@ h5{
   /* text-indent: 4em; */
   position: absolute;
   bottom: 2%;
+}
+
+li {
+  font-family:"Merriweather"
 }
 
 .instruction_text::before {
@@ -106,20 +114,20 @@ h5{
 }  
 
 .hover_label_text {
-  font-family: 'Lucida Bright';
+  font-family: 'Merriweather';
   font-weight: bold;
   font-size: 12;
 }
 
 text {
   fill: #000;
-  font: 'Lucida Bright';
+  font: 'Merriweather';
   padding-left: 0;
 }
 
 .operation {
   fill: #000;
-  font: 'Courier';
+  font: 'Merriweather';
   padding-left: 0;
   padding-top: 0;
   font-style: italic;
@@ -138,7 +146,7 @@ text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: #7cc2e2;
+    background-image: linear-gradient(lightblue, darkblue);
     opacity: 81;
     padding: 3rem;
 }
@@ -264,8 +272,9 @@ progress {
 }
 
 .img_to_fade_in {
-  opacity: 0;
+  opacity: .06;
   height: 100%;
+  outline: 1px dotted black;
   display:inline-block;
 }
 
@@ -299,6 +308,6 @@ svg #network{
   
 .node_label {
   fill: #000;
-  font: 'Lucida Bright';
+  font: 'Merriweather';
   padding-left: 0;
 }
